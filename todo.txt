@@ -1,14 +1,4 @@
-maybe start over and simplify the error message reporting stuff for name validation
-
-
 render table with entries
-
-
-! don't forget to reset api.js function to include setTimeOut original function.
-
-
-conditional rendering of submit button based on validName
-
 
 Name input should be validated using the provided mock API to check whether the chosen name is taken or not.
 Name input should be validated as the user is typing.
@@ -16,6 +6,4 @@ Location dropdown options should be fetched using the provided mock API.
 Component should have a responsive layout
 Component should be appropriately styled
 Unit tests are not required
-
-        <span className="error-message">derp</span>
 

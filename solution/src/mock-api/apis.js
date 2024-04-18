@@ -8,11 +8,6 @@ export const isNameValid = (name) =>
     }, Math.random() * 2000);
   });
 
-// export const isNameValid = (name) =>
-//   new Promise((resolve) => {
-//     resolve(name !== "invalid name");
-//   });
-
 /**
  * do not change the implementation
  */
