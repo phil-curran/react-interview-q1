@@ -6,9 +6,6 @@ import { useState, useEffect } from "react";
 // import mock api functions
 import { isNameValid, getLocations } from "../../mock-api/apis";
 
-// import debounce utility
-import { debounce } from "lodash"; // Import debounce from lodash
-
 // styling for this component
 import "./form.css";
 
@@ -69,7 +66,6 @@ export default function Form() {
       const locationsData = await getLocations();
       setLocations(locationsData);
     };
-
     fetchLocations();
   }, []);
 
@@ -110,7 +106,11 @@ export default function Form() {
           </select>
         </div>
         <div className="actions">
-          <button type="button" onClick={handleClearForm}>
+          <button
+            type="button"
+            onClick={handleClearForm}
+            disabled={formData.name === ""}
+          >
             Clear
           </button>
           <button type="button" onClick={handleSubmit} disabled={!validName}>
