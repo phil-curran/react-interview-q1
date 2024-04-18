@@ -11,6 +11,7 @@ import "./form.css";
 
 export default function Form() {
   // LOCAL STATES
+
   // placeholder for form inputs
   const [formData, setFormData] = useState({
     name: "",
@@ -40,15 +41,13 @@ export default function Form() {
     }
   };
 
-  // submits form data
+  // submit form data
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validName) {
       setEntries([...entries, formData]);
-      console.log(entries);
     }
     handleClearForm();
-    setValidName(false);
   };
 
   // handler for clearing form date
@@ -113,7 +112,13 @@ export default function Form() {
           >
             Clear
           </button>
-          <button type="button" onClick={handleSubmit} disabled={!validName}>
+          <button
+            type="button"
+            onClick={handleSubmit}
+            disabled={
+              formData.name === "" || formData.location === "" || !validName
+            }
+          >
             Add
           </button>
         </div>
