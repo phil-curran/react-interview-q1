@@ -46,7 +46,6 @@ export default function Form() {
   // submits form data
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
     if (validName) {
       setEntries([...entries, formData]);
       console.log(entries);
@@ -61,7 +60,7 @@ export default function Form() {
       name: "",
       location: "",
     });
-    console.log("form cleared");
+    setValidName(false);
   };
 
   // fetch data post page load
